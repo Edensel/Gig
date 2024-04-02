@@ -6,6 +6,17 @@ import { Link } from "react-router-dom"; // Import Link component
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+ const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleSignIn = () => {
+    // Logic to handle user authentication
+    setIsLoggedIn(true);
+  };
+
+  const handleSignOut = () => {
+    // Logic to handle user sign out
+    setIsLoggedIn(false);
+  };
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
@@ -28,15 +39,21 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <a href="/login" className="py-2 px-3 border rounded-md">
-              Sign In
-            </a>
-            <a
-              href="/register"
+          {isLoggedIn ? (
+          <button onClick={handleSignOut} className="py-2 px-3 border rounded-md">
+            Sign Out
+          </button>
+        ) : (
+          <Link to="/login" className="py-2 px-3 border rounded-md" onClick={handleSignIn}>
+                Sign In
+              </Link>
+        )}
+            <Link
+              to="/register"
               className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md"
             >
               Create an account
-            </a>
+            </Link>
           </div>
           <div className="lg:hidden md:flex flex-col justify-end">
             <button onClick={toggleNavbar}>
@@ -55,19 +72,20 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex space-x-6">
-              <a href="#" className="py-2 px-3 border rounded-md">
+            <Link to="/login" className="py-2 px-3 border rounded-md">
                 Sign In
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/register"
                 className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800"
               >
                 Create an account
-              </a>
+              </Link>
             </div>
           </div>
         )}
       </div>
+      
     </nav>
   );
 };
