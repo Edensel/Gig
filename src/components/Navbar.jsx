@@ -55,7 +55,7 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex space-x-6">
-              <a href="#" className="py-2 px-3 border rounded-md">
+              <a href="/login" className="py-2 px-3 border rounded-md">
                 Sign In
               </a>
               <a

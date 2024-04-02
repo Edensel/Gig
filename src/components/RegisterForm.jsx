@@ -1,9 +1,9 @@
-
+// import {register} from "..constants";
 
 function RegisterForm() {
     return (
       <div className="wrapper">
-        <form id="register-form" action="/services" method="get">
+        <form id="register-form" action="/ClientPage" method="get">
           <div className="form-box register">
             <h2>Registration</h2>
             <div className="input-box">
