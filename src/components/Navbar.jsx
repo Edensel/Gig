@@ -10,13 +10,13 @@ const Navbar = () => {
 
   const handleSignIn = () => {
     // Logic to handle user authentication
-    setIsLoggedIn(true);
+    setIsLoggedIn(!isLoggedIn);
   };
 
-  const handleSignOut = () => {
-    // Logic to handle user sign out
-    setIsLoggedIn(false);
-  };
+  // const handleSignOut = () => {
+  //   // Logic to handle user sign out
+  //   setIsLoggedIn(false);
+  // };
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
@@ -40,11 +40,11 @@ const Navbar = () => {
           </ul>
           <div className="hidden lg:flex justify-center space-x-12 items-center">
           {isLoggedIn ? (
-          <button onClick={handleSignOut} className="py-2 px-3 border rounded-md">
+          <button onClick={handleSignIn} className="py-2 px-3 border rounded-md"> {isLoggedIn ? "" : ""}
             Sign Out
           </button>
         ) : (
-          <Link to="/login" className="py-2 px-3 border rounded-md" onClick={handleSignIn}>
+          <Link to="/login" className="py-2 px-3 border rounded-md" onClick={handleSignIn} >  {isLoggedIn ? "Sign Out" : ""}
                 Sign In
               </Link>
         )}
