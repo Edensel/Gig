@@ -3,7 +3,7 @@
 function RegisterForm() {
     return (
       <div className="wrapper">
-        <form id="register-form" action="/ClientPage" method="get">
+        <form id="register-form" action="/OrderPage" method="get">
           <div className="form-box register">
             <h2>Registration</h2>
             <div className="input-box">

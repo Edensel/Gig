@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/logo.png";
 import { navItems } from "../constants";
@@ -6,6 +6,24 @@ import { Link } from "react-router-dom"; // Import Link component
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // useEffect(() => {
+  //   checkStorage();
+  //   return () => {};
+  // }, [isLoggedIn]);
+  // function checkStorage() {
+  //   if (localStorage.getItem("user")) {
+  //     setIsLoggedIn(true);
+  //   } else {
+  //     setIsLoggedIn(false);
+  //   }
+  // }
+  // const logout = () => {
+  //   localStorage.removeItem("user");
+  //   setIsLoggedIn(false);
+  // };
+
  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSignIn = () => {
@@ -39,6 +57,7 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="hidden lg:flex justify-center space-x-12 items-center">
+          {/* {isLoggedIn && <button onClick={logout}>Logout</button>} */}
           {isLoggedIn ? (
           <button onClick={handleSignIn} className="py-2 px-3 border rounded-md"> {isLoggedIn ? "" : ""}
             Sign Out

@@ -7,7 +7,7 @@ function LoginForm() {
   
   return (
     <div className="wrapper">
-      <form id="login-form" action ="/ClientPage" method="get">
+      <form id="login-form" action ="/OrderPage" method="get">
         <span className="icon-close">
           <ion-icon name="close"></ion-icon>
         </span>
