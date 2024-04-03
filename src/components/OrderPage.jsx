@@ -18,7 +18,7 @@ const OrderPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you would usually send this data to your server
+        // Here is where you will change to send data to your server
         console.log(orderDetails);
         alert('Order placed successfully!');
     };
