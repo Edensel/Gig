@@ -14,6 +14,7 @@ import Densel1 from "../assets/profile-pictures/Densel1.jpeg";
 
 export const navItems = [
   { label: "Home", href: "/" }, // Update href to "/"
+  { label: "Place Order", href: "/order" },
   { label: "Features", href: "/features" }, // Update href to "/features"
   { label: "Pricing", href: "/pricing" }, // Update href to "/pricing"
   { label: "Testimonials", href: "/testimonials" }, // Update href to "/testimonials"
