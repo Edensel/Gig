@@ -1,8 +1,4 @@
-
-
-// Gig/src/components/Navbar.jsx
-
-import { useState } from "react";
+import { useState} from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/logo.png";
 import { navItems } from "../constants";
@@ -10,6 +6,35 @@ import { Link } from "react-router-dom"; // Import Link component
 
 const Navbar = () => {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
+
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // useEffect(() => {
+  //   checkStorage();
+  //   return () => {};
+  // }, [isLoggedIn]);
+  // function checkStorage() {
+  //   if (localStorage.getItem("user")) {
+  //     setIsLoggedIn(true);
+  //   } else {
+  //     setIsLoggedIn(false);
+  //   }
+  // }
+  // const logout = () => {
+  //   localStorage.removeItem("user");
+  //   setIsLoggedIn(false);
+  // };
+
+ const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleSignIn = () => {
+    // Logic to handle user authentication
+    setIsLoggedIn(!isLoggedIn);
+  };
+
+  // const handleSignOut = () => {
+  //   // Logic to handle user sign out
+  //   setIsLoggedIn(false);
+  // };
 
   const toggleNavbar = () => {
     setMobileDrawerOpen(!mobileDrawerOpen);
@@ -32,15 +57,22 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <a href="#" className="py-2 px-3 border rounded-md">
-              Sign In
-            </a>
-            <a
-              href="#"
+          {/* {isLoggedIn && <button onClick={logout}>Logout</button>} */}
+          {isLoggedIn ? (
+          <button className="py-2 px-3 border rounded-md"> {isLoggedIn ? "" : ""}
+            Sign Out
+          </button>
+        ) : (
+          <Link to="/login" className="py-2 px-3 border rounded-md" >  {isLoggedIn ? "Sign Out" : ""}
+                Sign In
+              </Link>
+        )}
+            <Link
+              to="/register"
               className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md"
             >
               Create an account
-            </a>
+            </Link>
           </div>
           <div className="lg:hidden md:flex flex-col justify-end">
             <button onClick={toggleNavbar}>
@@ -59,22 +91,26 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex space-x-6">
-              <a href="#" className="py-2 px-3 border rounded-md">
+            <Link to="/login" className="py-2 px-3 border rounded-md">
                 Sign In
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/register"
                 className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800"
               >
                 Create an account
-              </a>
+              </Link>
             </div>
           </div>
         )}
       </div>
+      
     </nav>
   );
 };
 
 export default Navbar;
+
+
+
 
