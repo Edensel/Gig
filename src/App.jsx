@@ -14,6 +14,7 @@ import Footer from './components/Footer'; // Import Footer component
 import LoginForm from './components/LoginForm'
 import RegisterForm from './components/RegisterForm';
 
+
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -45,8 +46,8 @@ const App = () => {
           <Route path="/features" element={<FeatureSection />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/testimonials" element={<Testimonials />} />
-          <Route path='/login' element={<LoginForm />} />
-          <Route path='/register' element={<RegisterForm />} />
+          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/login" element={<LoginForm />} />
         </Routes>
         <Footer /> {/* Include the Footer component here */}
       </div>
