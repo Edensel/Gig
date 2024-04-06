@@ -1,23 +1,15 @@
-
-
-// Gig/src/App.jsx
-
-import {useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import FeatureSection from './components/FeatureSection';
 import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
+import AboutUs from './components/AboutUs'; // Import AboutUs component
 import OrderPage from './components/OrderPage';
-import Footer from './components/Footer'; // Import Footer component
-import LoginForm from './components/LoginForm'
-<<<<<<< HEAD
-import RegisterForm from './components/RegisterForm'
-=======
+import Footer from './components/Footer';
+import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
-
->>>>>>> 5b2b2750fca064a6dfee2fc6fa31d69be38b151a
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -50,19 +42,14 @@ const App = () => {
           <Route path="/features" element={<FeatureSection />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/testimonials" element={<Testimonials />} />
-<<<<<<< HEAD
-          <Route path='/login' element={<LoginForm/>}/>
-          <Route path='/register' element={<RegisterForm/>}/>
-=======
-          <Route path="/register" element={<RegisterForm />} />
-          <Route path="/login" element={<LoginForm />} />
->>>>>>> 5b2b2750fca064a6dfee2fc6fa31d69be38b151a
+          <Route path="/aboutus" element={<AboutUs />} /> {/* Update path */}
+          <Route path="/login" element={<LoginForm />} /> {/* Update path */}
+          <Route path="/register" element={<RegisterForm />} /> {/* Update path */}
         </Routes>
-        <Footer /> {/* Include the Footer component here */}
+        <Footer />
       </div>
     </Router>
   );
 };
 
 export default App;
-
