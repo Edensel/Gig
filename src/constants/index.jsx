@@ -18,6 +18,7 @@ export const navItems = [
   { label: "Features", href: "/features" }, // Update href to "/features"
   { label: "Pricing", href: "/pricing" }, // Update href to "/pricing"
   { label: "Testimonials", href: "/testimonials" }, // Update href to "/testimonials"
+  { label: "About Us", href: "/AboutUs" }// Update href to "/AboutUs"
 ];
 
 
