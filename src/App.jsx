@@ -6,8 +6,9 @@ import Footer from './components/Footer';
 import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import LoginForm from './components/LoginForm';
-import { useState, useEffect } from 'react';
 import RegisterForm from './components/RegisterForm';
+import { useState, useEffect } from 'react';
+
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
