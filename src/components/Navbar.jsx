@@ -59,11 +59,11 @@ const Navbar = () => {
           <div className="hidden lg:flex justify-center space-x-12 items-center">
           {/* {isLoggedIn && <button onClick={logout}>Logout</button>} */}
           {isLoggedIn ? (
-          <button onClick={handleSignIn} className="py-2 px-3 border rounded-md"> {isLoggedIn ? "" : ""}
+          <button className="py-2 px-3 border rounded-md"> {isLoggedIn ? "" : ""}
             Sign Out
           </button>
         ) : (
-          <Link to="/login" className="py-2 px-3 border rounded-md" onClick={handleSignIn} >  {isLoggedIn ? "Sign Out" : ""}
+          <Link to="/login" className="py-2 px-3 border rounded-md" >  {isLoggedIn ? "Sign Out" : ""}
                 Sign In
               </Link>
         )}
