@@ -6,8 +6,8 @@ import Footer from './components/Footer';
 import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import LoginForm from './components/LoginForm';
-import RegisterForm from './components/RegisterForm';
 import { useState, useEffect } from 'react';
+import RegisterForm from './components/RegisterForm';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -38,8 +38,8 @@ const App = () => {
           <Route path="/features" element={<FeatureSection />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/register" element={<RegisterForm />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterForm />} />
         </Routes>
         <Footer />
       </div>
