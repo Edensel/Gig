@@ -14,7 +14,10 @@ body {
       monospace;
   }
  
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5b2b2750fca064a6dfee2fc6fa31d69be38b151a
   
 
   .wrapper {
@@ -31,6 +34,7 @@ body {
       padding: 30px;
       margin-left: 35%;
       margin-top: 7%;
+      margin-bottom: 15%;
       align-items: center;
       overflow: hidden;
       transform: scale(1);
