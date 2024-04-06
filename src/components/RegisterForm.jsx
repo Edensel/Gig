@@ -1,6 +1,11 @@
 // import {register} from "..constants";
 
 function RegisterForm() {
+
+  const handleSubmit = () => {
+    alert("Registration Successful");
+  }
+  
     return (
       <div className="wrapper">
         <form id="register-form" action="/" method="get">
@@ -33,7 +38,7 @@ function RegisterForm() {
                 I agree to the terms & conditions
               </label>
             </div>
-            <button type="submit" className="btn">Register</button>
+            <button type="submit" className="btn" onClick={handleSubmit}>Register</button>
   
           </div>
         </form>

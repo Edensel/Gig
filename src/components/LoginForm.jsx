@@ -5,12 +5,12 @@ import "../login.css";
 function LoginForm() {
  
   const handleSubmit = () => {
-    console.log("Login Succesfull");
+    alert("Login Successful");
   }
   
   return (
     <div className="wrapper">
-      <form id="login-form" action ="/" method="get" onClick={handleSubmit}>
+      <form id="login-form" action ="/" method="get" >
         <span className="icon-close">
           <ion-icon name="close"></ion-icon>
         </span>
@@ -37,7 +37,7 @@ function LoginForm() {
             </label>
             <a href="#"> Forgot Password </a>
           </div>
-          <button type="submit" className="btn">Login</button>
+          <button type="submit" className="btn" onClick={handleSubmit}>Login</button>
         </div>
       </form>
     </div>
