@@ -13,6 +13,7 @@ import OrderPage from './components/OrderPage';
 import Footer from './components/Footer'; // Import Footer component
 import LoginForm from './components/LoginForm'
 import RegisterForm from './components/RegisterForm';
+import AboutUs from './components/AboutUs'
 
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
         <Footer /> {/* Include the Footer component here */}
       </div>
