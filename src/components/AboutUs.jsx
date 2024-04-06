@@ -1,7 +1,7 @@
 // AboutUs.js
 
 import React, { useState } from "react";
-import "../style.css";
+import "../About.css";
 
 const AboutUs = () => {
   const [selectedContact, setSelectedContact] = useState(null);
@@ -13,16 +13,16 @@ const AboutUs = () => {
   const renderContactInfo = () => {
     switch (selectedContact) {
       case "Contact":
-        return <p>Contact information: 254-7000-000-000</p>;
+        return <p className="contact-info">Contact information: 254-7000-000-000</p>;
       case "Email":
-        return <p>Email: gigahooy@gmail.com</p>;
+        return <p className="contact-info">Email: gigahooy@gmail.com</p>;
       default:
         return null;
     }
   };
 
   return (
-    <div>
+    <div className="about-us-container">
       <h2>Welcome to Gig Ahooy!!!</h2>
       <p>
         In an age where time is of the essence and convenience is not just a
