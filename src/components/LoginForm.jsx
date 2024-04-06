@@ -4,10 +4,13 @@ import "../login.css";
 
 function LoginForm() {
  
+  const handleSubmit = () => {
+    console.log("Login Succesfull");
+  }
   
   return (
     <div className="wrapper">
-      <form id="login-form" action ="/" method="get">
+      <form id="login-form" action ="/" method="get" onClick={handleSubmit}>
         <span className="icon-close">
           <ion-icon name="close"></ion-icon>
         </span>
