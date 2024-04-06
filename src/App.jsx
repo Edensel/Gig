@@ -72,7 +72,7 @@ const App = () => {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path='/login' element={<LoginForm/>}/>
-          <Route path='/Register' element={<RegisterForm/>}/>
+          <Route path='/register' element={<RegisterForm/>}/>
         </Routes>
         <Footer /> {/* Include the Footer component here */}
       </div>
