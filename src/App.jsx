@@ -44,9 +44,9 @@ const App = () => {
       <div className="max-w-7xl mx-auto pt-20 px-6">
         <Routes>
           <Route path="/" element={<HeroSection />} />
-          <Route path="/order" element={<OrderPage />} />
+          {isLoggedIn && <Route path="/order" element={<OrderPage />} />}
           <Route path="/features" element={<FeatureSection />} />
-          <Route path="/pricing" element={<Pricing />} />
+          {isLoggedIn && <Route path="/pricing" element={<Pricing />} />}
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/login" element={<LoginForm handleSignIn={handleSignIn} />} />
