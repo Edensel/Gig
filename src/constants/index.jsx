@@ -17,12 +17,12 @@ export const navItems = [
   { label: "Place Order", href: "/order" },
   { label: "Features", href: "/features" }, // Update href to "/features"
   { label: "Pricing", href: "/pricing" }, // Update href to "/pricing"
-  { label: "Testimonials", href: "/testimonials" }, // Update href to "/testimonials"
+  { label: "Feedback", href: "/feedback" }, // Update href to "/feedback"
   { label: "About Us", href: "/AboutUs" }// Update href to "/AboutUs"
 ];
 
 
-export const testimonials = [
+export const feedback = [
   {
     user: "Densel Esekon",
     company: "Moringa School",

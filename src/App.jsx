@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import FeatureSection from './components/FeatureSection';
 import Pricing from './components/Pricing';
-import Testimonials from './components/Testimonials';
+import Feedback from './components/Feedback';
 import OrderPage from './components/OrderPage';
 import Footer from './components/Footer'; // Import Footer component
 import LoginForm from './components/LoginForm'
@@ -46,7 +46,7 @@ const App = () => {
           <Route path="/order" element={<OrderPage />} />
           <Route path="/features" element={<FeatureSection />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/feedback" element={<Feedback />} />
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/aboutus" element={<AboutUs />} />
