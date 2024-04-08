@@ -24,7 +24,7 @@ function LoginForm() {
           <ion-icon name="close"></ion-icon>
         </span>
         <div className="form-box login">
-          <h2>Login</h2>
+          <h2>Logine</h2>
           <div className="input-box">
             <span className="icon">
               <ion-icon name="mail"></ion-icon>
