@@ -1,26 +1,53 @@
-
-
-// Gig/src/components/RegisterForm.jsx
-
-import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
-import { registerUser } from './api';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 
 function RegisterForm() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await registerUser({ username, email, password });
-      alert(response.message);
-      navigate("/login");
+      const response = await fetch("http://127.0.0.1:5000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert("Registration Successful");
+
+        // Reset the form data to clear the form fields
+        setFormData({
+          username: "",
+          email: "",
+          password: "",
+        });
+
+        // Redirect to the home page or newly registered user
+        navigate("/"); // This will navigate the user to the home page, showing the newly registered user
+      } else {
+        alert(data.error || "An error occurred");
+      }
     } catch (error) {
-      console.error(error);
-      alert(error.message);
+      console.error("Error during registration:", error);
+      alert("An error occurred during registration.");
     }
   };
 
@@ -36,9 +63,9 @@ function RegisterForm() {
             <input
               type="text"
               required
-              title="Enter Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              name="username"
+              value={formData.username}
+              onChange={handleInputChange}
             />
             <label>Username</label>
           </div>
@@ -49,9 +76,9 @@ function RegisterForm() {
             <input
               type="email"
               required
-              title="Enter Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
             />
             <label>Email</label>
           </div>
@@ -62,9 +89,9 @@ function RegisterForm() {
             <input
               type="password"
               required
-              title="Enter Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
             />
             <label>Password</label>
           </div>

@@ -44,9 +44,6 @@ const Feedback = () => {
 
       {/* Posted Feedback */}
       <div>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-10 lg:my-20">
-          Posted Feedback:
-        </h2>
         <ul>
           {postedFeedback.map((feedback, index) => (
             <li key={index} className="posted-feedback">

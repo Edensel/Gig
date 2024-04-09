@@ -1,8 +1,4 @@
-
-
-// Gig/src/App.jsx
-
-import {useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
@@ -11,10 +7,9 @@ import Pricing from './components/Pricing';
 import Feedback from './components/Feedback';
 import OrderPage from './components/OrderPage';
 import Footer from './components/Footer'; // Import Footer component
-import LoginForm from './components/LoginForm'
+import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
-import AboutUs from './components/AboutUs'
-
+import AboutUs from './components/AboutUs';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,33 +17,39 @@ const App = () => {
   useEffect(() => {
     checkStorage();
     return () => {};
-  }, [isLoggedIn]);
+  }, []);
 
   function checkStorage() {
-    if (localStorage.getItem("user")) {
+    if (localStorage.getItem('user')) {
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
     }
   }
 
-  const logout = () => {
-    localStorage.removeItem("user");
+  const handleSignIn = () => {
+    // Logic to handle user authentication
+    setIsLoggedIn(true);
+  };
+
+  const handleSignOut = () => {
+    // Logic to handle user sign out
+    localStorage.removeItem('user');
     setIsLoggedIn(false);
   };
 
   return (
     <Router>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} handleSignOut={handleSignOut} />
       <div className="max-w-7xl mx-auto pt-20 px-6">
         <Routes>
           <Route path="/" element={<HeroSection />} />
-          <Route path="/order" element={<OrderPage />} />
+          {isLoggedIn && <Route path="/order" element={<OrderPage />} />}
           <Route path="/features" element={<FeatureSection />} />
-          <Route path="/pricing" element={<Pricing />} />
+          {isLoggedIn && <Route path="/pricing" element={<Pricing />} />}
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/register" element={<RegisterForm />} />
-          <Route path="/login" element={<LoginForm />} />
+          <Route path="/login" element={<LoginForm handleSignIn={handleSignIn} />} />
           <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
         <Footer /> {/* Include the Footer component here */}
@@ -58,4 +59,3 @@ const App = () => {
 };
 
 export default App;
-

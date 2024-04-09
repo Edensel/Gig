@@ -1,22 +1,49 @@
-import React, { useState } from 'react';
-import '../login.css';
+import "../login.css";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from './api';
+import PropTypes from 'prop-types';
 
-function LoginForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+
+function LoginForm({ handleSignIn }) {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await loginUser({ email, password });
-      alert(response.message);
-      navigate("/order");
+      const response = await fetch("http://127.0.0.1:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert("Login Successful");
+
+        // Redirect to the home page or any other desired page
+        handleSignIn();
+        navigate("/"); // This will navigate the user to the home page after successful login
+      } else {
+        alert(data.error || "Invalid email address or password");
+      }
     } catch (error) {
-      console.error(error);
-      alert(error.message);
+      console.error("Error during login:", error);
+      alert("An error occurred during login.");
     }
   };
 
@@ -35,9 +62,9 @@ function LoginForm() {
             <input
               type="email"
               required
-              title="Enter Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
             />
             <label>Email</label>
           </div>
@@ -48,17 +75,18 @@ function LoginForm() {
             <input
               type="password"
               required
-              title="Enter password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
             />
             <label>Password</label>
           </div>
           <div className="login-forgot">
             <label>
-              <input type="checkbox" /> Remember Me!
+              <input type="checkbox" />
+              Remember Me!
             </label>
-            <a href="#">Forgot Password</a>
+            <a href="#"> Forgot Password </a>
           </div>
           <button type="submit" className="btn">
             Login
@@ -68,5 +96,8 @@ function LoginForm() {
     </div>
   );
 }
+ LoginForm.propTypes = {
+  handleSignIn: PropTypes.func.isRequired,
+ };
 
 export default LoginForm;
