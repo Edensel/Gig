@@ -65,8 +65,5 @@ function LoginForm() {
     </div>
   );
 }
- LoginForm.propTypes = {
-  handleSignIn: PropTypes.func.isRequired,
- };
 
 export default LoginForm;
