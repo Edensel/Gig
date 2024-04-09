@@ -1,16 +1,23 @@
+
+
+// Gig/src/components/RegisterForm.jsx
+
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { registerUser } from './api';
 
 function RegisterForm() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await registerUser({ username, email, password });
       alert(response.message);
+      navigate("/login");
     } catch (error) {
       console.error(error);
       alert(error.message);
