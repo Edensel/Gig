@@ -1,0 +1,86 @@
+/* style.css */
+
+/* Main container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Feedback section */
+  .feedback-section {
+    margin-bottom: 20px;
+  }
+  
+  /* Input field */
+  .feedback-section input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Post button */
+  .feedback-section button {
+    background-color: #ff8400;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .feedback-section button:hover {
+    background-color: #ff8400;
+  }
+  
+  /* Posted feedback */
+  .posted-feedback {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  /* Testimonial section */
+  .testimonials-container {
+    margin-top: 40px;
+  }
+  
+  /* Testimonial card */
+  .testimonial-card {
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-card p {
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-card h6 {
+    margin-bottom: 5px;
+  }
+  
+  .testimonial-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .feedback-section input[type="text"] {
+      margin-bottom: 8px;
+    }
+  
+    .feedback-section button {
+      padding: 6px 12px;
+    }
+  }
+  

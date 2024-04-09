@@ -17,6 +17,10 @@ const OrderPage = () => {
     const { name, value } = e.target;
     setOrderDetails({ ...orderDetails, [name]: value });
   };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setOrderDetails({ ...orderDetails, [name]: value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
