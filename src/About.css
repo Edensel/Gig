@@ -1,0 +1,53 @@
+/* style.css */
+
+/* Main container */
+.about-us-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Buttons container */
+  .closeNav {
+    margin-top: 20px;
+  }
+  
+  /* Buttons */
+  .closeNav button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    background-color: #ff5e00;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .closeNav button:hover {
+    background-color: #ff5e00;
+  }
+  
+  /* Contact info */
+  .contact-info p {
+    margin-top: 10px;
+  }
+
+  /* Center and bold headings */
+.about-us-container h2,
+.about-us-container h3 {
+  font-weight: bold;
+}
+
+.about-us-container p {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .about-us-container h2:hover,
+  .about-us-container h3:hover{
+    color: #ff5e00;
+    cursor: pointer;
+}
+
