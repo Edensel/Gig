@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import '../login.css';
+import { useNavigate } from "react-router-dom";
 import { loginUser } from './api';
 
 function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await loginUser({ email, password });
       alert(response.message);
+      navigate("/order");
     } catch (error) {
       console.error(error);
       alert(error.message);
